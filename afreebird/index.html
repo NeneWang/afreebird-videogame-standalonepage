@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Final</title>
+    <title>Afreebird | Videogame</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
@@ -21,7 +21,7 @@
     .grey{
         background-color:lightgray; 
     }
-
+.close {display: none;}
 </style>
   <body>
     <div class="webgl-content">
@@ -29,7 +29,7 @@
       <div class="footer">
 <!--        <div class="webgl-logo"></div>-->
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Final</div>
+        <div class="title">Expand view</div>
       </div>
     </div>
     
@@ -48,13 +48,6 @@
         </div>
       </nav>
 <div class="container">
-  <h1>.</h1>
-  <p>.</p>
-
-  <!-- Button to Open the Modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Open modal
-  </button>
 
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
@@ -68,23 +61,40 @@
         </div>
         
         <!-- Modal body -->
-        <div class="modal-body">
-          <input type="text" placeholder="Password" class="form-control">
+       <form action="" >
+            <div class="modal-body">
+          <input id="enter_input" type="text" placeholder="Password" class="form-control">
+          <p>Use for now: afb2020</p>
         </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-primary"  onclick="checkPassword()">Submit</button>
         </div>
         
+       </form>
       </div>
     </div>
   </div>
   
 </div>
   </body>
-  
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    $('#myModal').modal({backdrop: 'static', keyboard: false}) ;
+    
+    function checkPassword(){
+        var enteredPassword = document.getElementById("enter_input").value;
+        var PREDEFINED_PASSWORD = 'afb2020';
+        if(enteredPassword == PREDEFINED_PASSWORD){
+            $('#myModal').modal('hide');
+        }
+        
+    }
+    $('#myModal').modal();
+    </script>
 </html>
